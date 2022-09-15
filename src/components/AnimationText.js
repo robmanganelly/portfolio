@@ -5,7 +5,8 @@ export const AnimationText1 = () => {
     <Fragment>
       <TypeAnimation
         cursor={true}
-        sequence={[" Designer", 1000, " Developer", 1000, " FreLancer", 1000]}
+        // sequence={[" Designer", 1000, " Developer", 1000, " FreLancer", 1000]}
+        sequence={["Full -Stack ", 1000, "Innovative ", 1000, "Freelancer ", 1000]}
         wrapper="span"
         repeat={Infinity}
       />
@@ -13,7 +14,8 @@ export const AnimationText1 = () => {
   );
 };
 
-const skills = ["Designer", "Developer", "Freelancer"];
+// const skills = ["Designer", "Developer", "Freelancer"];
+const skills = ["Innovative", "Freelancer", "Full -Stack "];
 export const RotateTextAnimation = () => {
   const [text, setText] = useState(0);
   useEffect(() => {
@@ -26,7 +28,7 @@ export const RotateTextAnimation = () => {
   return (
     <Fragment>
       <span className="cd-headline rotate-1">
-        <span className="blc">Creative </span>
+        {/* <span className="blc">Creative </span> */}
         <span className="cd-words-wrapper">
           {skills.map((skill, i) => (
             <b key={i} className={text === i ? "is-visible" : "is-hidden"}>
@@ -34,6 +36,7 @@ export const RotateTextAnimation = () => {
             </b>
           ))}
         </span>
+        <span className="blc">Web Developer </span>
       </span>
     </Fragment>
   );
