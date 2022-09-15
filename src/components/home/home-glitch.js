@@ -16,7 +16,7 @@ export default function HomeGlitch({ ActiveIndex, handleOnClick }) {
       >
         <div className="cavani_tm_home">
           <div className="content">
-            <h3 className="name">Kelly Emerson</h3>
+            <h3 className="name">{'Roberto Manganelly'}</h3>
             <span className="line" />
             <h3 className="job">
               <RotateTextAnimation />
