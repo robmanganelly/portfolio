@@ -32,9 +32,9 @@ const servicesList = [
 ];
 
 const circleProgressData = [
-    { language: 'Spanish', progress: 99 },
-    { language: 'English', progress: 65 },
-    { language: 'Italian', progress: 40 },
+    { language: 'Spanish', progress: 99, bgColor: "#7d7789" },
+    { language: 'English', progress: 65, bgColor: "#7d7789" },
+    { language: 'Italian', progress: 40, bgColor: "#7d7789" },
 
 ];
 
@@ -57,28 +57,49 @@ const progressBarData = [
 ];
 
 const services = [
-    {
-        desc: "Beautiful minimalist design and great, fast response with support. Highly recommend. Thanks Marketify!.",
-        img: "img/testimonials/1.jpg",
-        info1: "Alexander Walker",
-        info2: "Graphics Designer"
+    // {
+    //     desc: "Beautiful minimalist design and great, fast response with support. Highly recommend. Thanks Marketify!.",
+    //     img: "img/testimonials/1.jpg",
+    //     info1: "Alexander Walker",
+    //     info2: "Graphics Designer"
 
-    },
-    {
-        desc: "I had a little problem and the support was just awesome to quickly solve the situation. And keep going on.",
-        img: "img/testimonials/2.jpg",
-        info1: "Baraka Clinton",
-        info2: "Construction Engineering"
+    // },
+    // {
+    //     desc: "I had a little problem and the support was just awesome to quickly solve the situation. And keep going on.",
+    //     img: "img/testimonials/2.jpg",
+    //     info1: "Baraka Clinton",
+    //     info2: "Construction Engineering"
 
-    },
-    {
-        desc: "These people really know what they are doing! Great customer support availability and supperb kindness.",
-        img: "img/testimonials/3.jpg",
-        info1: "Armin Van Buuren",
-        info2: "Content Manager"
+    // },
+    // {
+    //     desc: "These people really know what they are doing! Great customer support availability and supperb kindness.",
+    //     img: "img/testimonials/3.jpg",
+    //     info1: "Armin Van Buuren",
+    //     info2: "Content Manager"
 
-    },
-]
+    // },
+];
+
+const universityList = [
+ {since:'2018', until:'2020', place: 'University of Havana', degree:'B.S Computer Science'},
+ {since:'2009', until:'2014', place: 'University of Havana', degree:'Laws Degree'},
+ {since:'1996', until:'2009', place: '', degree:'General Education'},
+];
+
+const experienceList = [
+    {since:'2018', until:'running', company: 'Freelancer', job:'Web Developer'},
+    {since:'2017', until:'2020', company: 'VitalDeco', job:'Owner'},
+    {since:'2014', until:'2021', company: 'Fixsoft', job:'Owner'},
+   ];
+   
+
+const partnerList = [
+    {image:"img/partners/1.png", alt:"", link:"#"},
+    {image:"img/partners/2.png", alt:"", link:"#"},
+    {image:"img/partners/3.png", alt:"", link:"#"},
+    {image:"img/partners/4.png", alt:"", link:"#"},
+    {image:"img/partners/5.png", alt:"", link:"#"},
+];
 
 export default function AboutGlitch({ ActiveIndex }) {
     return (
@@ -87,6 +108,7 @@ export default function AboutGlitch({ ActiveIndex }) {
             <div className={ActiveIndex === 1 ? "cavani_tm_section active animated rollIn" : "cavani_tm_section active hidden animated rollOut"} id="about_">
                 <div className="section_inner">
                     <div className="cavani_tm_about">
+                        {/* <!-- BIOGRAPHY --> */}
                         <div className="biography">
                             <div className="cavani_tm_title">
                                 <span>About Me</span>
@@ -123,6 +145,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                 </div>
                             </div>
                         </div>
+                        {/* <!-- sERVICES AND iNTERESTS --> */}
                         <div className="services">
                             <div className="wrapper">
                                 <div className="service_list">
@@ -147,6 +170,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                 </div>
                             </div>
                         </div>
+                        {/* <!-- PROGRAMMING AND LANGUAGE --> */}
                         <div className="skills">
                             <div className="wrapper">
                                 <div className="programming">
@@ -174,7 +198,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                             value={item.progress}
                                                             text={`${item.progress}%`}
                                                             strokeWidth={3}
-                                                            stroke='#7d7789'
+                                                            stroke={item.bgColor}
                                                             Language={item.language}
                                                             className={"list_inner"}
                                                         />
@@ -188,8 +212,10 @@ export default function AboutGlitch({ ActiveIndex }) {
                                 </div>
                             </div>
                         </div>
+                        {/* <!-- EDUCATION AND EXPERIENCE --> */}
                         <div className="resume">
                             <div className="wrapper">
+                                {/* <!-- education --> */}
                                 <div className="education">
                                     <div className="cavani_tm_title">
                                         <span>Education</span>
@@ -197,7 +223,20 @@ export default function AboutGlitch({ ActiveIndex }) {
                                     <div className="list">
                                         <div className="univ">
                                             <ul>
-                                                <li>
+                                                {universityList.map((item,i)=>
+                                                    <li key={i}>
+                                                        <div className="list_inner">
+                                                            <div className="time">
+                                                                <span>{`${item.since} - ${item.until}`}</span>
+                                                            </div>
+                                                            <div className="place">
+                                                                <h3>{item.place}</h3>
+                                                                <span>{item.degree}</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                )}
+                                                {/* <li>
                                                     <div className="list_inner">
                                                         <div className="time">
                                                             <span>2014 - 2016</span>
@@ -229,11 +268,12 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                             <span>Associate Degree</span>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
+                                {/* <!-- experience --> */}
                                 <div className="experience">
                                     <div className="cavani_tm_title">
                                         <span>Experience</span>
@@ -241,7 +281,20 @@ export default function AboutGlitch({ ActiveIndex }) {
                                     <div className="list">
                                         <div className="univ">
                                             <ul>
-                                                <li>
+                                            {experienceList.map((item,i)=>
+                                                    <li key={i}>
+                                                        <div className="list_inner">
+                                                            <div className="time">
+                                                                <span>{`${item.since} - ${item.until}`}</span>
+                                                            </div>
+                                                            <div className="place">
+                                                                <h3>{item.company}</h3>
+                                                                <span>{item.job}</span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                )}
+                                                {/* <li>
                                                     <div className="list_inner">
                                                         <div className="time">
                                                             <span>2018 - running</span>
@@ -273,7 +326,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                             <span>Football Player</span>
                                                         </div>
                                                     </div>
-                                                </li>
+                                                </li> */}
                                             </ul>
                                         </div>
                                     </div>
@@ -286,7 +339,13 @@ export default function AboutGlitch({ ActiveIndex }) {
                             </div>
                             <div className="list">
                                 <ul>
-                                    <li>
+                                    {partnerList.map((item,i)=><li key={i}>
+                                        <div className="list_inner">
+                                            <img src={item.image} alt={item.alt} />
+                                            <a className="cavani_tm_full_link" href={item.link}></a>
+                                        </div>
+                                    </li>)}
+                                    {/* <li>
                                         <div className="list_inner">
                                             <img src="img/partners/1.png" alt="" />
                                             <a className="cavani_tm_full_link" href="#"></a>
@@ -333,7 +392,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                             <img src="img/partners/3.png" alt="" />
                                             <a className="cavani_tm_full_link" href="#"></a>
                                         </div>
-                                    </li>
+                                    </li> */}
                                 </ul>
                             </div>
                         </div>
