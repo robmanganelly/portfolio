@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import MagicCursor from '../../layout/magic-cursor';
+// import MagicCursor from '../../layout/magic-cursor';
 import { customCursor } from '../../plugin/plugin';
+
+const touchInfo = [
+ { icon: 'icon-location', info: ['Florida U.S.'] },
+ { icon: 'icon-mail-3', info: ['roberto.manganelly','@gmail.com'] },
+ { icon: 'icon-mobile', info: ['+1 (786) 820-5678'] },
+];
+
 
 export default function ContactGlitch({ ActiveIndex }) {
     const [trigger, setTrigger] = useState(false);
@@ -18,6 +25,7 @@ export default function ContactGlitch({ ActiveIndex }) {
     };
     const { email, name, msg } = form;
     const onSubmit = (e) => {
+        // TODO send actual message from here.
         e.preventDefault();
         if (email && name && msg) {
             setSuccess(true);
@@ -43,26 +51,15 @@ export default function ContactGlitch({ ActiveIndex }) {
                         </div>
                         <div className="short_info">
                             <ul>
-                                <li>
+                                {touchInfo.map((item,i)=><li key={i}>
                                     <div className="list_inner">
-                                        <i className="icon-location"></i>
-                                        <span>Ave Street, New York, USA</span>
+                                        <i className={item.icon}></i>
+                                        <span>{item.info.map((fragment,f)=><span key={f}>{fragment}</span>)}</span>
                                     </div>
-                                </li>
-                                <li>
-                                    <div className="list_inner">
-                                        <i className="icon-mail-3"></i>
-                                        <span><a href="#">hello@cavani.com</a></span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="list_inner">
-                                        <i className="icon-mobile"></i>
-                                        <span>+77 022 444 05 05</span>
-                                    </div>
-                                </li>
+                                </li>)}
                             </ul>
                         </div>
+                        {/*<!--FORM SECTION--> */}
                         <div className="form">
                             <div className="left">
                                 <div className="fields">
@@ -145,14 +142,17 @@ export default function ContactGlitch({ ActiveIndex }) {
                                     {/* /Contact Form */}
                                 </div>
                             </div>
+                           {/* <!--MAP SECTION--> */}
                             <div className="right">
                                 <div className="map_wrap">
                                     <div className="map" id="ieatmaps">
                                         <iframe
                                             height={375}
+                                            loading="lazy"
                                             style={{ width: "100%" }}
                                             id="gmap_canvas"
-                                            src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                            // src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                            src="https://maps.google.com/maps?q=Miami+FL&t=&z=9&ie=UTF8&iwloc=&output=embed"
                                         />
                                         <a href="https://www.embedgooglemap.net/blog/divi-discount-code-elegant-themes-coupon" />
                                         <br />
