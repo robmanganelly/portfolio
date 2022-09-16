@@ -4,7 +4,9 @@ export default function Intro() {
     return (
         <div className="cavani_tm_intro">
             <div className="main_title">
-                <img src="img/logo/dark.png" alt="" />
+                {/* <img src="img/logo/dark.png" alt="" /> */}
+                <h4 className='logo_robmanganelly'>robmanganelly.dev</h4>
+
                 <p>CV / Resume / Personal / Portfolio Template</p>
             </div>
             <div className="demo_list">

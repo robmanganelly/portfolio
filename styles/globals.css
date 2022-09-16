@@ -1,3 +1,11 @@
+.logo_robmanganelly{
+  letter-spacing: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+
+}
+
 .cavani_tm_home .job .styles_type__2Teeh {
   font-weight: 600;
   color: #333;

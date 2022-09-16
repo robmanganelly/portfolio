@@ -15,7 +15,7 @@ const contactInfo = [
 ]
 
 const skillsList = [
-  'Technology & Business</>',
+  'Technology & Business',
   'AI & Robotics',
   'Blockchain & Cryptocurrencies',
   'Cars & Motorcycles',
