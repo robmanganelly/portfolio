@@ -56,7 +56,7 @@ const progressBarData = [
     { bgcolor: "#7d7789", completed: 35, title: 'React' },
 ];
 
-const services = [
+const services = [ //!Important
     // {
     //     desc: "Beautiful minimalist design and great, fast response with support. Highly recommend. Thanks Marketify!.",
     //     img: "img/testimonials/1.jpg",
@@ -236,39 +236,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                         </div>
                                                     </li>
                                                 )}
-                                                {/* <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2014 - 2016</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>Oxford Univercity</h3>
-                                                            <span>Master Degree</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2010 - 2014</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>Texas Univercity</h3>
-                                                            <span>Bachelor Degree</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2008 - 2010</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>Simone College</h3>
-                                                            <span>Associate Degree</span>
-                                                        </div>
-                                                    </div>
-                                                </li> */}
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -294,39 +262,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                         </div>
                                                     </li>
                                                 )}
-                                                {/* <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2018 - running</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>Envato Elements</h3>
-                                                            <span>Exclusive Author</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2015 - 2018</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>Avo Corporation</h3>
-                                                            <span>Content Manager</span>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                <li>
-                                                    <div className="list_inner">
-                                                        <div className="time">
-                                                            <span>2012 - 2015</span>
-                                                        </div>
-                                                        <div className="place">
-                                                            <h3>FC Barcelona</h3>
-                                                            <span>Football Player</span>
-                                                        </div>
-                                                    </div>
-                                                </li> */}
+                                                
                                             </ul>
                                         </div>
                                     </div>
@@ -345,54 +281,6 @@ export default function AboutGlitch({ ActiveIndex }) {
                                             <a className="cavani_tm_full_link" href={item.link}></a>
                                         </div>
                                     </li>)}
-                                    {/* <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/1.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/2.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/3.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/4.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/5.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/1.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/2.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div className="list_inner">
-                                            <img src="img/partners/3.png" alt="" />
-                                            <a className="cavani_tm_full_link" href="#"></a>
-                                        </div>
-                                    </li> */}
                                 </ul>
                             </div>
                         </div>
