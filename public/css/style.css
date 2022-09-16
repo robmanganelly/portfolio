@@ -3297,6 +3297,8 @@ margin-top: 60px;
 
 	.cavani_tm_about .skills .programming {
 		width: 100%;
+		display: flex;
+	flex-direction: 'column'; 
 	}
 
 	.cavani_tm_about .skills .language {
@@ -3508,8 +3510,11 @@ margin-top: 60px;
 }
 .circular_progress_bar .circle_holder{
 	display: flex;
+	flex-direction: column; /*added by me*/
 	justify-content: space-between;
 	align-items: center;
+	margin-top: 5px;/*added*/
+	margin-bottom: 5px;/*added*/
 }
 
 .circular_progress_bar .circle_holder>div{

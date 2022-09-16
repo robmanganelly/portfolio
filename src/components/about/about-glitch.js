@@ -6,17 +6,54 @@ import "react-circular-progressbar/dist/styles.css";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
+const contactInfo = [
+  ['Name:', 'Roberto Manganelly'],
+  ['Address:','Florida, USA'],
+  ['Study:', 'University of Havana.Cuba'],
+  ['E-mail:','roberto.manganelly@gmail.com'],
+  ['Phone:','+1 (786) 820-5678']                                  
+]
+
+const skillsList = [
+  'Technology & Business</>',
+  'AI & Robotics',
+  'Blockchain & Cryptocurrencies',
+  'Cars & Motorcycles',
+  'Reading & Music',
+];
+
+const servicesList = [
+  'Software Development',
+  'User Interfaces',
+  'Reactive Web Apps',
+  'Enterprise Applications',
+  'Website Migrations',
+  'Web Hosting'
+];
+
 const circleProgressData = [
-    { language: 'English', progress: 95 },
-    { language: 'Russian', progress: 80 },
-    { language: 'Arabic', progress: 90 },
+    { language: 'Spanish', progress: 99 },
+    { language: 'English', progress: 65 },
+    { language: 'Italian', progress: 40 },
 
 ];
 
 const progressBarData = [
-    { bgcolor: "#7d7789", completed: 60, title: 'HTML & CSS' },
+    //"#228822"
+    //"#226622"
+    //"#225533"
+    //"#cccc55"
+    //"#ddcc55"
+    //"#eebb44"
+    //"#ff8844"
     { bgcolor: "#7d7789", completed: 85, title: 'Javascript' },
-    { bgcolor: "#7d7789", completed: 90, title: 'WordPress' },
+    { bgcolor: "#7d7789", completed: 80, title: 'Node' },
+    { bgcolor: "#7d7789", completed: 75, title: 'Angular' },
+    { bgcolor: "#7d7789", completed: 60, title: 'HTML & CSS' },
+    { bgcolor: "#7d7789", completed: 55, title: 'Python' },
+    { bgcolor: "#7d7789", completed: 40, title: 'Docker' },
+    { bgcolor: "#7d7789", completed: 40, title: 'Kubernetes' },
+    { bgcolor: "#7d7789", completed: 35, title: 'React' },
 ];
 
 const services = [
@@ -56,17 +93,32 @@ export default function AboutGlitch({ ActiveIndex }) {
                             </div>
                             <div className="wrapper">
                                 <div className="left">
-                                    <p>Hello there! My name is <strong>Alan Walker.</strong> I am a graphic designer, and I&#39;m very passionate and dedicated to my work.</p>
-                                    <p>With 20 years experience as a professional a graphic designer, I have acquired the skills and knowledge necessary to make your project a success.</p>
+                                    <p>Hello there! I am <strong>Roberto Manganelly</strong>.</p>
+                                    <p>I love building <strong>software</strong> and, even more so, <strong>web applications</strong>. </p>
+                                    <p>I keep constantly updating myself with the <strong>latest technologies</strong> and trends in the industry.
+
+                                    </p>
                                 </div>
                                 <div className="right">
                                     <ul>
-                                        <li><span className="first">Name:</span><span className="second">Alan Walker</span></li>
-                                        <li><span className="first">Address:</span><span className="second">Ave Street, New York, USA</span></li>
-                                        <li><span className="first">Study:</span><span className="second">Univercity of Oxford</span></li>
+                                        {contactInfo.map((item,i)=>{
+                                            return i!==3/*fixed*/ ?
+                                            <li>
+                                                <span className="first">{item[0]}</span>
+                                                <span className="second">{item[1]}</span>
+                                            </li>
+                                            :
+                                            <li>
+                                                <span className="first">{item[0]}</span>
+                                                <span className="second"><a href='#'>{item[1]}</a></span>
+                                            </li>
+                                        })}
+                                        {/* <li><span className="first">Name:</span><span className="second">Roberto Manganelly</span></li>
+                                        <li><span className="first">Address:</span><span className="second">Florida, USA</span></li>
+                                        <li><span className="first">Study:</span><span className="second">University of Havana.Cuba</span></li>
                                         <li><span className="first">Degree:</span><span className="second">Master of Science</span></li>
-                                        <li><span className="first">Mail:</span><span className="second"><a href="#">hello@cavani.com</a></span></li>
-                                        <li><span className="first">Phone:</span><span className="second">+77 022 444 05 05</span></li>
+                                        <li><span className="first">E-Mail:</span><span className="second"><a href="#">roberto.manganelly@gmail.com</a></span></li>
+                                        <li><span className="first">Phone:</span><span className="second">+1 (786) 820-5678</span></li> */}
                                     </ul>
                                 </div>
                             </div>
@@ -79,11 +131,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                     </div>
                                     <div className="list">
                                         <ul>
-                                            <li>Web Development</li>
-                                            <li>Graphic Design</li>
-                                            <li>Landing Page</li>
-                                            <li>On-Page SEO</li>
-                                            <li>Web Hosting</li>
+                                        {servicesList.map((item,i)=>(<li key={i}>{item}</li>))}
                                         </ul>
                                     </div>
                                 </div>
@@ -93,11 +141,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                     </div>
                                     <div className="list">
                                         <ul>
-                                            <li>Painting &amp; Drawing</li>
-                                            <li>Reading &amp; Writing</li>
-                                            <li>Music &amp; Cinema</li>
-                                            <li>Travel &amp; Picnik</li>
-                                            <li>Rain &amp; Snow</li>
+                                        {skillsList.map((item,i)=>(<li key={i}>{item}</li>))}
                                         </ul>
                                     </div>
                                 </div>
@@ -124,6 +168,8 @@ export default function AboutGlitch({ ActiveIndex }) {
                                             {circleProgressData.map((item, idx) => (
                                                 <div key={idx}>
                                                     <div className="list_inner">
+                                                        {/*title moved upside */}
+                                                        <div className="title"><span>{item.language}</span></div>
                                                         <CircularProgressbar
                                                             value={item.progress}
                                                             text={`${item.progress}%`}
@@ -132,7 +178,7 @@ export default function AboutGlitch({ ActiveIndex }) {
                                                             Language={item.language}
                                                             className={"list_inner"}
                                                         />
-                                                        <div className="title"><span>{item.language}</span></div>
+                                                        {/* <div className="title"><span>{item.language}</span></div> */}
                                                     </div>
                                                 </div>
                                             ))}
