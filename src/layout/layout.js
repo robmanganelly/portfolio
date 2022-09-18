@@ -13,7 +13,7 @@ export default function Layout({ children }) {
         <meta name="author" content="TrendyCoder" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-        <title>Cavani | Home</title>
+        <title>robmanganelly.dev</title>
 
         {/* <!-- STYLES --> */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
