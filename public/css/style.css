@@ -481,6 +481,23 @@ h6 {
 	transition: all .3s ease
 }
 
+.cavani_tm_mobile_menu_counterpart{
+		position: 'fixed';
+		width: '100%';
+		height: '100%';
+		left: 0;
+		top: 0;
+		background-color: 'rgba(0,0,0,0.5)';
+		z-index: 14;
+		overflow: 'hidden';
+		display: 'flex';
+	}
+.cavani_tm_mobile_menu_counterpart.hidden{
+	display: none;
+	position: hidden;
+}
+
+
 .cavani_tm_mobile_menu.opened {
 	right: 0
 }
