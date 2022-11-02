@@ -81,7 +81,7 @@ export default function ContactGlitch({ ActiveIndex }) {
                     onClick={
                         // Ternary operator for calling action based on index
                        i !== 2? (e)=>{return document.getElementById(`link-${i}`).click()}
-                       : (e)=>{navigator.clipboard.writeText('+17868205678').then(alert("Phone Number: \"+1 (786) 820 5678\"\nsuccessfully copied to clipboard."))}
+                       : (e)=>{navigator.clipboard.writeText('+17868205678').then(()=>alert("Phone Number: \"+1 (786) 820 5678\"\nsuccessfully copied to clipboard."))}
                     }>
                       <i className={item.icon}></i>
                       <span>
