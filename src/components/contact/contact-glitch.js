@@ -1,14 +1,43 @@
-import React, { useState, useEffect } from "react";
+import { send } from "@emailjs/browser";
+import React, { useState, useEffect, useRef } from "react";
 // import MagicCursor from '../../layout/magic-cursor';
 import { customCursor } from "../../plugin/plugin";
+import ReCAPTCHA from "react-google-recaptcha";
 
 const touchInfo = [
-  { icon: "icon-location", info: ["Florida U.S."], linkTo: "http://maps.google.com/maps/place/Miami,+FL" },
-  { icon: "icon-mail-3", info: ["roberto.manganelly", "@gmail.com"], linkTo:"mailto:roberto.manganelly@gmail.com" },
-  { icon: "icon-mobile", info: ["+1 (786) 820-5678"],},
+  {
+    icon: "icon-location",
+    info: ["Florida U.S."],
+    linkTo: "http://maps.google.com/maps/place/Miami,+FL",
+  },
+  {
+    icon: "icon-mail-3",
+    info: ["roberto.manganelly", "@gmail.com"],
+    linkTo: "mailto:roberto.manganelly@gmail.com",
+  },
+  { icon: "icon-mobile", info: ["+1 (786) 820-5678"] },
 ];
 
+function validate(field, value) {
+  switch (field) {
+    case "email":
+      return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value);
+    case "name":
+      return (
+        value.length > 1 &&
+        value.length < 50 &&
+        !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(value)
+      );
+    case "msg":
+      return value.length > 1 && value.length < 500;
+    default:
+      return false;
+  }
+}
+
 export default function ContactGlitch({ ActiveIndex }) {
+  const captchaRef = useRef(null);
+
   const [trigger, setTrigger] = useState(false);
   useEffect(() => {
     // dataImage();
@@ -28,7 +57,26 @@ export default function ContactGlitch({ ActiveIndex }) {
   const onSubmit = (e) => {
     // TODO send actual message from here.
     e.preventDefault();
-    if (email && name && msg) {
+    const token = captchaRef.current.getValue();
+    captchaRef.current.reset();
+    if (
+      !!token &&
+      validate("email", email) &&
+      validate("name", name) &&
+      validate("msg", msg)
+    ) {      
+      send(
+        "default_service",
+       process.env.NEXT_PUBLIC_EMAIL_TEMPLATE,
+        {
+          timestamp: new Date().toLocaleString(),
+          from_name: name,
+          reply_to: email,
+          message: msg,
+          "g-recaptcha-response": token,
+        },
+        process.env.NEXT_PUBLIC_PUBLIC_KEY
+      );
       setSuccess(true);
       setTimeout(() => {
         setForm({ email: "", name: "", msg: "" });
@@ -64,7 +112,6 @@ export default function ContactGlitch({ ActiveIndex }) {
               <ul>
                 {touchInfo.map((item, i) => (
                   <li key={i}>
-                    
                     {/*hidden link to call the action */}
                     <a
                       id={`link-${i}`}
@@ -72,17 +119,33 @@ export default function ContactGlitch({ ActiveIndex }) {
                       href={item.linkTo}
                       rel="noreferrer"
                       target="_blank"
-                    >{i}</a>
+                    >
+                      {i}
+                    </a>
 
                     {/**actual div containing the li */}
-                    <div 
-                    style={{cursor:'pointer'}}
-                    className="list_inner" 
-                    onClick={
+                    <div
+                      style={{ cursor: "pointer" }}
+                      className="list_inner"
+                      onClick={
                         // Ternary operator for calling action based on index
-                       i !== 2? (e)=>{return document.getElementById(`link-${i}`).click()}
-                       : (e)=>{navigator.clipboard.writeText('+17868205678').then(()=>alert("Phone Number: \"+1 (786) 820 5678\"\nsuccessfully copied to clipboard."))}
-                    }>
+                        i !== 2
+                          ? (e) => {
+                              return document
+                                .getElementById(`link-${i}`)
+                                .click();
+                            }
+                          : (e) => {
+                              navigator.clipboard
+                                .writeText("+17868205678")
+                                .then(() =>
+                                  alert(
+                                    'Phone Number: "+1 (786) 820 5678"\nsuccessfully copied to clipboard.'
+                                  )
+                                );
+                            }
+                      }
+                    >
                       <i className={item.icon}></i>
                       <span>
                         {item.info.map((fragment, f) => (
@@ -114,7 +177,7 @@ export default function ContactGlitch({ ActiveIndex }) {
                       className="empty_notice"
                       style={{ display: error ? "block" : "none" }}
                     >
-                      <span>Please Fill Required Fields!</span>
+                      <span>Error:<br/>Please Check your Input, all fields must be properly completed!</span>
                     </div>
                     {/* */}
 
@@ -165,6 +228,12 @@ export default function ContactGlitch({ ActiveIndex }) {
                             value={msg}
                             id="message"
                             placeholder="Message"
+                          />
+                        </li>
+                        <li>
+                          <ReCAPTCHA
+                            ref={captchaRef}
+                            sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
                           />
                         </li>
                       </ul>

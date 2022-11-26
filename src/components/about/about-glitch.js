@@ -81,15 +81,15 @@ const services = [ //!Important
 ];
 
 const universityList = [
- {since:'2018', until:'2020', place: 'University of Havana', degree:'B.S Computer Science'},
- {since:'2009', until:'2014', place: 'University of Havana', degree:'Laws Degree'},
+ {since:'2019', until:'2021', place: 'University of Camaguey', degree:'Software Engineer'},
+ {since:'2015', until:'2019', place: 'University of Camaguey', degree:'Laws Degree'},
  {since:'1996', until:'2009', place: '', degree:'General Education'},
 ];
 
 const experienceList = [
-    {since:'2018', until:'running', company: 'Freelancer', job:'Web Developer'},
-    {since:'2017', until:'2020', company: 'VitalDeco', job:'Owner'},
-    {since:'2014', until:'2021', company: 'Fixsoft', job:'Owner'},
+    {since:'2020', until:'running', company: 'Freelance', job:'Web Developer'},
+    {since:'2017', until:'2021', company: 'VitalDeco', job:'Owner'},
+    {since:'2014', until:'2021', company: 'Fixsoft', job:'Independent'},
    ];
    
 
