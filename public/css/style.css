@@ -3430,6 +3430,26 @@ margin-top: 60px;
 	.cavani_tm_about .biography .wrapper .right{
 		width: 100%;
 	}
+
+	/*added*/
+	.cavani_tm_portfolio .portfolio_list .filter-container .filter-item .details {
+		position: absolute;
+		left: 20px;
+		right: 20px;
+		bottom: 0;
+		background-color: #fff;
+		box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+		z-index: 3;
+		padding: 15px;
+		/* transform: translateY(102%); */
+		-webkit-transition: all .3s ease;
+		-moz-transition: all .3s ease;
+		-ms-transition: all .3s ease;
+		-o-transition: all .3s ease;
+		transition: all .3s ease;
+		transform: translateY(0);
+		bottom: 20px
+	}
 }
 
 @media(max-width:576px) {

@@ -119,11 +119,11 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                     <div className="list_inner">
                                         <div className="image">
                                             <img src="img/thumbs/1-1.jpg" alt="" />
-                                            <div className="main" data-img-url="img/portfolio/2.jpg" onClick={() => setIsOpen2(true)}></div>
+                                            <div className="main" data-img-url="img/portfolio/math.jpg" onClick={() => setIsOpen2(true)}></div>
                                             <span className="icon"><i className="icon-vimeo-1"></i></span>
                                             <div className="details">
-                                                <h3>Kelly Hookin</h3>
-                                                <span>Vimeo</span>
+                                                <h3>Calculator</h3>
+                                                <span>Angular 15 and Firebase</span>
                                             </div>
                                         </div>
                                     </div>
