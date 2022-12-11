@@ -87,6 +87,7 @@ const universityList = [
 ];
 
 const experienceList = [
+    {since:'2021', until:'running', company: 'AlphaGuard LLC', job:'Junior Software Developer'},
     {since:'2020', until:'running', company: 'Freelance', job:'Web Developer'},
     {since:'2017', until:'2021', company: 'VitalDeco', job:'Owner'},
     {since:'2014', until:'2021', company: 'Fixsoft', job:'Independent'},
