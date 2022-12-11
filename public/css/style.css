@@ -725,7 +725,8 @@ h6 {
 
 .cavani_tm_home .job .blc {
 	/* margin-right: 5px; */
-	margin-left: 5px;
+	/* margin-left: 5px; */
+	font-size: 40px;
 }
 
 .cavani_tm_home .job span {

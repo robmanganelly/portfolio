@@ -15,7 +15,7 @@ export const AnimationText1 = () => {
 };
 
 // const skills = ["Designer", "Developer", "Freelancer"];
-const skills = ["Innovative", "Freelancer", "Full -Stack "];
+const skills = ["Innovative", "Freelancer", "Full-Stack", "Frontend","Passionate" ,"Backend"];
 export const RotateTextAnimation = () => {
   const [text, setText] = useState(0);
   useEffect(() => {
@@ -29,14 +29,14 @@ export const RotateTextAnimation = () => {
     <Fragment>
       <span className="cd-headline rotate-1">
         {/* <span className="blc">Creative </span> */}
-        <span className="cd-words-wrapper">
+        <div className="cd-words-wrapper">
           {skills.map((skill, i) => (
             <b key={i} className={text === i ? "is-visible" : "is-hidden"}>
               {skill}
             </b>
           ))}
-        </span>
-        <span className="blc">Web Developer </span>
+        </div>
+        <div className="blc">Web Developer </div>
       </span>
     </Fragment>
   );
