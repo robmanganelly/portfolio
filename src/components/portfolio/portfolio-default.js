@@ -104,19 +104,34 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                         <div className="portfolio_filter">
                             <ul>
                                 <li><a href='#' onClick={handleFilterKeyChange('*')} className="current">All</a></li>
-                                <li><a href='#' onClick={handleFilterKeyChange('vimeo')} data-filter=".vimeo">Vimeo</a></li>
-                                <li><a href='#' onClick={handleFilterKeyChange('youtube')} data-filter=".youtube">Youtube</a></li>
-                                <li><a href='#' onClick={handleFilterKeyChange('soundcloud')} data-filter=".soundcloud">Soundcloud</a></li>
-                                <li><a href='#' onClick={handleFilterKeyChange('detail')} data-filter=".detail">Detail</a></li>
-                                <li><a href='#' onClick={handleFilterKeyChange('image')} data-filter=".image">Image</a></li>
+                                <li><a href='#' onClick={handleFilterKeyChange('angular')} data-filter=".angular">Angular</a></li>
+                                {/* <li><a href='#' onClick={handleFilterKeyChange('vimeo')} data-filter=".vimeo">Vimeo</a></li> */}
+                                {/* <li><a href='#' onClick={handleFilterKeyChange('youtube')} data-filter=".youtube">Youtube</a></li> */}
+                                {/* <li><a href='#' onClick={handleFilterKeyChange('soundcloud')} data-filter=".soundcloud">Soundcloud</a></li> */}
+                                {/* <li><a href='#' onClick={handleFilterKeyChange('detail')} data-filter=".detail">Detail</a></li> */}
+                                {/* <li><a href='#' onClick={handleFilterKeyChange('image')} data-filter=".image">Image</a></li> */}
                             </ul>
                         </div>
                         <div className="portfolio_list">
 
                             {/* <ul className={activeTab === 1 ? "gallery_zoom" : "gallery_zoom d-none"}> */}
                             <div className="filter-container">
-                                <div className="filter-item vimeo fadeInUp">
+                                <a rel="noreferrer" href="https://google.com" target="_blank" id="openCalculator" style={{'display':'none'}}></a>
+                                <div className="filter-item angular fadeInUp">
                                     <div className="list_inner">
+                                        <div className="image">
+                                            <img src="img/thumbs/1-1.jpg" alt="" />
+                                            <div className="main" data-img-url="img/portfolio/math.jpg" onClick={() =>{openCalculator.click()} }></div>
+                                            {/* <span className="icon"><i className="icon-vimeo-1"></i></span> */}
+                                            <div className="details">
+                                                <h3>Calculator</h3>
+                                                <span>Angular 15 and Firebase</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="filter-item vimeo fadeInUp">
+                                    {/* <div className="list_inner">
                                         <div className="image">
                                             <img src="img/thumbs/1-1.jpg" alt="" />
                                             <div className="main" data-img-url="img/portfolio/math.jpg" onClick={() => setIsOpen2(true)}></div>
@@ -126,10 +141,10 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                                 <span>Angular 15 and Firebase</span>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="filter-item youtube">
-                                    <div className="list_inner">
+                                    {/* <div className="list_inner">
                                         <div className="image">
                                             <img src="img/thumbs/1-1.jpg" alt="" />
                                             <div className="main" data-img-url="img/portfolio/1.jpg" onClick={() => setIsOpen(true)}></div>
@@ -138,12 +153,12 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                                 <h3>Ave Brook</h3>
                                                 <span>Youtube</span>
                                             </div>
-                                            {/* <a className="cavani_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=7e90gBu4pas"></a> */}
+                                            TODO:comment this link! <a className="cavani_tm_full_link popup-youtube" href="https://www.youtube.com/watch?v=7e90gBu4pas"></a> 
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="filter-item soundcloud">
-                                    <div className="list_inner">
+                                    {/* <div className="list_inner">
                                         <div className="image">
                                             <img src="img/thumbs/1-1.jpg" alt="" />
                                             <div className="main" data-img-url="img/portfolio/3.jpg" onClick={toggleModalThree}></div>
@@ -152,12 +167,12 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                                 <h3>Ashley Flores</h3>
                                                 <span>Soundcloud</span>
                                             </div>
-                                            {/* <a className="cavani_tm_full_link soundcloude_link mfp-iframe audio" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471954807&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></a> */}
+                                          Comment this Link  <a className="cavani_tm_full_link soundcloude_link mfp-iframe audio" href="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/471954807&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></a> 
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                                 <div className="filter-item detail">
-                                    <div className="list_inner">
+                                    {/* <div className="list_inner">
                                         <div className="image">
                                             <img src="img/thumbs/1-1.jpg" alt="" />
                                             <div className="main" data-img-url="img/portfolio/6.jpg" onClick={toggleModalFour}></div>
@@ -166,22 +181,19 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                                 <h3>Alice Moon</h3>
                                                 <span>Detail</span>
                                             </div>
-                                            {/* <a className="cavani_tm_full_link portfolio_popup" href="#"></a> */}
+                                            TODO:comment this link! <a className="cavani_tm_full_link portfolio_popup" href="#"></a>
                                         </div>
-
-
-
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {/* Photo Gallery Started */}
-                                <LightgalleryProvider>
+                                {/* <LightgalleryProvider>
 
                                     {imagesCollection.map((p, idx) => (
                                         <PhotoItem key={idx} image={p[0]} thumb={p[1]} />
                                     ))}
 
-                                </LightgalleryProvider>
+                                </LightgalleryProvider> */}
                                 {/* Photo Gallery End */}
                             </div>
                         </div>
