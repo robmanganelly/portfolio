@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site":"robmanganelly-383a6",
     "public": "./out",
     "ignore": [
       "firebase.json",
