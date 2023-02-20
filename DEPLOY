@@ -1,0 +1,26 @@
+deploy wokflow
+
+//using firebase
+
+1. export app with command 
+   pnpm run export 
+   // this will write to ./out 
+
+2. test files with 
+   pnpm run test-bundle
+
+3. deploy
+   firebase deploy --only hosting    
+   // usually you must specify one target, this is not the case. 
+
+
+// when not using firebase
+1 . create the bundle 
+   npm run build 
+2. test bundle
+   npm start
+...to be continued
+
+
+
+
