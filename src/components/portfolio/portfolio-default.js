@@ -116,11 +116,12 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
 
                             {/* <ul className={activeTab === 1 ? "gallery_zoom" : "gallery_zoom d-none"}> */}
                             <div className="filter-container">
+                                {/* link for calculator */}
                                 <a rel="noreferrer" href="https://angular.portfolio.robmanganelly.dev" target="_blank" id="openCalculator" style={{'display':'none'}}></a>
                                 <div className="filter-item angular fadeInUp">
                                     <div className="list_inner">
                                         <div className="image">
-                                            <img src="img/thumbs/1-1.jpg" alt="" />
+                                            <img src="img/thumbs/math.jpg" alt="" />
                                             <div className="main" data-img-url="img/portfolio/math.jpg" onClick={() =>{openCalculator.click()} }></div>
                                             {/* <span className="icon"><i className="icon-vimeo-1"></i></span> */}
                                             <div className="details">
@@ -130,6 +131,22 @@ export default function PortfolioDefault({ ActiveIndex, Animation }) {
                                         </div>
                                     </div>
                                 </div>
+                                {/* link for text tool */}
+                                <a rel="noreferrer" href="https://text-tool.robmanganelly.dev" target="_blank" id="openTextTool" style={{'display':'none'}}></a>
+                                <div className="filter-item angular fadeInUp">
+                                    <div className="list_inner">
+                                        <div className="image">
+                                            <img src="img/thumbs/text-tool.png" alt="" />
+                                            <div className="main" data-img-url="img/portfolio/text-tool.png" onClick={() =>{openTextTool.click()} }></div>
+                                            {/* <span className="icon"><i className="icon-vimeo-1"></i></span> */}
+                                            <div className="details">
+                                                <h3>Text Tool</h3>
+                                                <span>Angular 15  + PrimeNG +Firebase</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div className="filter-item vimeo fadeInUp">
                                     {/* <div className="list_inner">
                                         <div className="image">
